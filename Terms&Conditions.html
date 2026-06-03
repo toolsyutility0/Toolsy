@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Terms & Conditions • Toolsy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#09090f;
+    --card:#12121c;
+
+    --border:rgba(255,255,255,0.08);
+
+    --text:#ffffff;
+    --muted:#9f9fb4;
+
+    --purple:#8b5cf6;
+    --purple2:#7c3aed;
+    --purple3:#a855f7;
+
+    --glow:rgba(139,92,246,0.35);
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+
+}
+
+/* BACKGROUND */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+
+}
+
+.blur{
+
+    position:absolute;
+    border-radius:50%;
+    filter:blur(130px);
+    opacity:.35;
+
+}
+
+.blur1{
+
+    width:450px;
+    height:450px;
+
+    background:#7c3aed;
+
+    top:-150px;
+    left:-120px;
+
+}
+
+.blur2{
+
+    width:500px;
+    height:500px;
+
+    background:#2563eb;
+
+    top:120px;
+    right:-180px;
+
+}
+
+.blur3{
+
+    width:500px;
+    height:500px;
+
+    background:#9333ea;
+
+    bottom:-220px;
+    left:30%;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(9,9,15,0.75);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.nav-inner{
+
+    max-width:1200px;
+    margin:auto;
+
+    padding:22px 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+    color:white;
+
+}
+
+.logo-box{
+
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+    font-weight:800;
+
+    box-shadow:0 0 35px var(--glow);
+
+}
+
+.logo h2{
+
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-1px;
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:32px;
+
+}
+
+.nav-links a{
+
+    color:#d4d4e6;
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.nav-links a:hover{
+
+    color:white;
+
+}
+
+/* PAGE */
+
+.page{
+
+    max-width:1000px;
+    margin:auto;
+
+    padding:90px 28px 100px;
+
+}
+
+.page-card{
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+    );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:36px;
+
+    padding:60px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+
+}
+
+.page-title{
+
+    font-size:64px;
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:20px;
+
+}
+
+.page-title span{
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.updated{
+
+    color:var(--muted);
+    font-size:15px;
+
+    margin-bottom:50px;
+
+}
+
+.policy-section{
+
+    margin-bottom:48px;
+
+}
+
+.policy-section h2{
+
+    font-size:30px;
+    letter-spacing:-1px;
+
+    margin-bottom:18px;
+
+}
+
+.policy-section p{
+
+    color:#d7d7e7;
+    line-height:1.9;
+
+    font-size:16px;
+
+    margin-bottom:16px;
+
+}
+
+.policy-section ul{
+
+    padding-left:24px;
+
+}
+
+.policy-section li{
+
+    color:#d7d7e7;
+    line-height:1.9;
+
+    margin-bottom:10px;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    padding:42px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    color:var(--muted);
+
+    margin-top:80px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.page-title{
+
+    font-size:44px;
+
+}
+
+.page-card{
+
+    padding:34px;
+
+}
+
+.policy-section h2{
+
+    font-size:24px;
+
+}
+
+.nav-links{
+
+    display:none;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+    <div class="blur blur3"></div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-box">T</div>
+
+            <h2>Toolsy</h2>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About / Contact</a>
+            <a href="Policy_privacy.html">Policy & Privacy</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- PAGE -->
+
+<section class="page">
+
+    <div class="page-card">
+
+        <h1 class="page-title">
+
+            Terms &
+            <span>Conditions</span>
+
+        </h1>
+
+        <p class="updated">
+
+            Last updated: June 2026
+
+        </p>
+
+        <div class="policy-section">
+
+            <h2>Use of the Website</h2>
+
+            <p>
+
+                Toolsy provides free online file conversion and utility
+                tools for personal and general use.
+
+            </p>
+
+            <p>
+
+                By using this website, you agree not to:
+
+            </p>
+
+            <ul>
+
+                <li>Use the website for illegal purposes</li>
+                <li>Attempt to damage or disrupt the website</li>
+                <li>Upload malicious or harmful files</li>
+                <li>Abuse or misuse the services provided</li>
+
+            </ul>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>No Guarantees</h2>
+
+            <p>
+
+                The tools and services provided by Toolsy are offered
+                "as is" without warranties of any kind.
+
+            </p>
+
+            <p>
+
+                We do not guarantee:
+
+            </p>
+
+            <ul>
+
+                <li>Continuous website availability</li>
+                <li>Error-free operation</li>
+                <li>Perfect conversion accuracy</li>
+                <li>Compatibility with every file type</li>
+
+            </ul>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>File Responsibility</h2>
+
+            <p>
+
+                Users are fully responsible for the files they upload,
+                convert, or process using Toolsy.
+
+            </p>
+
+            <p>
+
+                We are not liable for:
+
+            </p>
+
+            <ul>
+
+                <li>Data loss</li>
+                <li>Corrupted files</li>
+                <li>Damages caused by file usage</li>
+                <li>Issues resulting from use of the tools</li>
+
+            </ul>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Intellectual Property</h2>
+
+            <p>
+
+                All website branding, design, UI elements, graphics,
+                and content belong to Toolsy unless otherwise stated.
+
+            </p>
+
+            <p>
+
+                Unauthorized copying or redistribution of website content
+                may violate intellectual property laws.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Third-Party Services</h2>
+
+            <p>
+
+                Toolsy may include third-party services, advertisements,
+                analytics providers, external links, or embedded content.
+
+            </p>
+
+            <p>
+
+                We are not responsible for the content, privacy policies,
+                or practices of third-party services or websites.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Changes to Terms</h2>
+
+            <p>
+
+                These Terms & Conditions may be modified or updated at any
+                time without prior notice.
+
+            </p>
+
+            <p>
+
+                Continued use of Toolsy after changes are published means
+                you agree to the updated terms.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Contact</h2>
+
+            <p>
+
+                For questions regarding these Terms & Conditions,
+                please contact us through the Toolsy Contact page.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    Toolsy © 2026 — Modern Browser Utilities Made By Aryan Makwana
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Privacy Policy • Toolsy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#09090f;
+    --card:#12121c;
+
+    --border:rgba(255,255,255,0.08);
+
+    --text:#ffffff;
+    --muted:#9f9fb4;
+
+    --purple:#8b5cf6;
+    --purple2:#7c3aed;
+    --purple3:#a855f7;
+
+    --glow:rgba(139,92,246,0.35);
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+
+}
+
+/* BACKGROUND */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+
+}
+
+.blur{
+
+    position:absolute;
+    border-radius:50%;
+    filter:blur(130px);
+    opacity:.35;
+
+}
+
+.blur1{
+
+    width:450px;
+    height:450px;
+
+    background:#7c3aed;
+
+    top:-150px;
+    left:-120px;
+
+}
+
+.blur2{
+
+    width:500px;
+    height:500px;
+
+    background:#2563eb;
+
+    top:120px;
+    right:-180px;
+
+}
+
+.blur3{
+
+    width:500px;
+    height:500px;
+
+    background:#9333ea;
+
+    bottom:-220px;
+    left:30%;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(9,9,15,0.75);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.nav-inner{
+
+    max-width:1200px;
+    margin:auto;
+
+    padding:22px 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    cursor:pointer;
+
+    text-decoration:none;
+    color:white;
+
+}
+
+.logo-box{
+
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+    font-weight:800;
+
+    box-shadow:0 0 35px var(--glow);
+
+}
+
+.logo h2{
+
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-1px;
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:32px;
+
+}
+
+.nav-links a{
+
+    color:#d4d4e6;
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.nav-links a:hover{
+
+    color:white;
+
+}
+
+/* PAGE */
+
+.page{
+
+    max-width:1000px;
+    margin:auto;
+
+    padding:90px 28px 100px;
+
+}
+
+.page-card{
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+    );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:36px;
+
+    padding:60px;
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 20px 60px rgba(0,0,0,0.35);
+
+}
+
+.page-title{
+
+    font-size:64px;
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:20px;
+
+}
+
+.page-title span{
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.updated{
+
+    color:var(--muted);
+    font-size:15px;
+
+    margin-bottom:50px;
+
+}
+
+.policy-section{
+
+    margin-bottom:48px;
+
+}
+
+.policy-section h2{
+
+    font-size:30px;
+    letter-spacing:-1px;
+
+    margin-bottom:18px;
+
+}
+
+.policy-section p{
+
+    color:#d7d7e7;
+    line-height:1.9;
+
+    font-size:16px;
+
+    margin-bottom:16px;
+
+}
+
+.policy-section ul{
+
+    padding-left:24px;
+
+}
+
+.policy-section li{
+
+    color:#d7d7e7;
+    line-height:1.9;
+
+    margin-bottom:10px;
+
+}
+
+.policy-link{
+
+    color:#9b87ff;
+    text-decoration:none;
+
+}
+
+.policy-link:hover{
+
+    text-decoration:underline;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    padding:42px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    color:var(--muted);
+
+    margin-top:80px;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.page-title{
+
+    font-size:44px;
+
+}
+
+.page-card{
+
+    padding:34px;
+
+}
+
+.policy-section h2{
+
+    font-size:24px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+    <div class="blur blur3"></div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-box">T</div>
+
+            <h2>Toolsy</h2>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="about.html">About / Contact</a>
+            <a href="Terms&Conditions.html">Terms & Conditions</a>
+
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- PAGE -->
+
+<section class="page">
+
+    <div class="page-card">
+
+        <h1 class="page-title">
+
+            Privacy
+            <span>Policy</span>
+
+        </h1>
+
+        <p class="updated">
+
+            Last updated: June 2026
+
+        </p>
+
+        <div class="policy-section">
+
+            <h2>File Privacy</h2>
+
+            <p>
+
+                Toolsy provides browser-based utility tools designed for fast,
+                private, and secure file processing directly on your device.
+
+            </p>
+
+            <p>
+
+                We do not upload, store, or permanently save your files on our
+                servers whenever local browser processing is possible.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Information We Collect</h2>
+
+            <p>
+
+                We may collect limited non-personal information such as:
+
+            </p>
+
+            <ul>
+
+                <li>Browser type</li>
+                <li>Device information</li>
+                <li>Operating system</li>
+                <li>Anonymous analytics data</li>
+                <li>Website usage statistics</li>
+                <li>Cookies and advertising data</li>
+
+            </ul>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Google AdSense & Advertising</h2>
+
+            <p>
+
+                Toolsy may display advertisements provided by Google AdSense
+                and other advertising partners.
+
+            </p>
+
+            <p>
+
+                Third-party advertising vendors, including Google, may use
+                cookies to personalize advertisements based on your browsing
+                activity and interests.
+
+            </p>
+
+            <p>
+
+                Learn more about how Google uses data here:
+
+            </p>
+
+            <p>
+
+                <a 
+                href="https://policies.google.com/technologies/ads"
+                target="_blank"
+                class="policy-link">
+
+                    https://policies.google.com/technologies/ads
+
+                </a>
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Cookies</h2>
+
+            <p>
+
+                Toolsy may use cookies to:
+
+            </p>
+
+            <ul>
+
+                <li>Improve website functionality</li>
+                <li>Remember user preferences</li>
+                <li>Analyze website traffic</li>
+                <li>Deliver personalized advertisements</li>
+                <li>Enhance overall user experience</li>
+
+            </ul>
+
+            <p>
+
+                You can disable cookies anytime through your browser settings.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Third-Party Services</h2>
+
+            <p>
+
+                We may use trusted third-party services including:
+
+            </p>
+
+            <ul>
+
+                <li>Google Analytics</li>
+                <li>Google AdSense</li>
+                <li>EmailJS</li>
+                <li>CDN and hosting providers</li>
+
+            </ul>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Data Security</h2>
+
+            <p>
+
+                We aim to keep Toolsy secure, private, and safe to use.
+
+            </p>
+
+            <p>
+
+                However, no website, online platform, or internet transmission
+                can guarantee complete security.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>External Links</h2>
+
+            <p>
+
+                Toolsy may contain links to third-party websites or services.
+                We are not responsible for the content, policies, or practices
+                of external websites.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Policy Updates</h2>
+
+            <p>
+
+                This Privacy Policy may be updated or modified at any time
+                without prior notice.
+
+            </p>
+
+            <p>
+
+                Continued use of Toolsy after changes are posted means you
+                accept the updated policy.
+
+            </p>
+
+        </div>
+
+        <div class="policy-section">
+
+            <h2>Contact</h2>
+
+            <p>
+
+                If you have any questions regarding this Privacy Policy,
+                you may contact us through the Contact page on Toolsy.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    Toolsy © 2026 — Modern Browser Utilities Made By Aryan Makwana
+
+</footer>
+
+</body>
+</html>

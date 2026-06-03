@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Toolsy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --bg:#09090f;
+
+    --border:rgba(255,255,255,0.08);
+
+    --text:#ffffff;
+    --muted:#9f9fb4;
+
+    --purple:#8b5cf6;
+    --purple2:#7c3aed;
+    --purple3:#a855f7;
+
+    --glow:rgba(139,92,246,0.35);
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+
+}
+
+/* BACKGROUND */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+
+}
+
+.blur{
+
+    position:absolute;
+    border-radius:50%;
+    filter:blur(130px);
+    opacity:.35;
+
+}
+
+.blur1{
+
+    width:450px;
+    height:450px;
+
+    background:#7c3aed;
+
+    top:-150px;
+    left:-120px;
+
+}
+
+.blur2{
+
+    width:500px;
+    height:500px;
+
+    background:#2563eb;
+
+    top:120px;
+    right:-180px;
+
+}
+
+.blur3{
+
+    width:500px;
+    height:500px;
+
+    background:#9333ea;
+
+    bottom:-220px;
+    left:30%;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(9,9,15,0.75);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.nav-inner{
+
+    max-width:1300px;
+    margin:auto;
+
+    padding:22px 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    cursor:pointer;
+
+}
+
+.logo-box{
+
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+    font-weight:800;
+
+    box-shadow:0 0 35px var(--glow);
+
+}
+
+.logo h2{
+
+    font-size:26px;
+    font-weight:800;
+    letter-spacing:-1px;
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:34px;
+
+}
+
+.nav-links a{
+
+    color:#d4d4e6;
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.nav-links a:hover{
+
+    color:white;
+
+}
+
+/* HERO */
+
+.hero{
+
+    max-width:1300px;
+    margin:auto;
+
+    padding:110px 28px 90px;
+
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:center;
+
+}
+
+.hero-text h1{
+
+    font-size:78px;
+    line-height:1.03;
+    letter-spacing:-4px;
+
+    margin-bottom:26px;
+
+}
+
+.hero-text h1 span{
+
+    background:linear-gradient(
+        90deg,
+        #ffffff,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero-text p{
+
+    font-size:19px;
+    line-height:1.8;
+
+    color:var(--muted);
+
+    max-width:640px;
+
+    margin-bottom:38px;
+
+}
+
+.hero-btn{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:18px 28px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 35px rgba(139,92,246,.3);
+
+    border:none;
+    cursor:pointer;
+
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* HERO RIGHT */
+
+.hero-preview{
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.07),
+        rgba(255,255,255,0.03)
+    );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:34px;
+
+    padding:28px;
+
+    backdrop-filter:blur(20px);
+
+}
+
+.preview-grid{
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+
+}
+
+.preview-card{
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.06);
+
+    border-radius:24px;
+
+    padding:24px;
+
+    transition:.35s;
+
+}
+
+.preview-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(139,92,246,.5);
+
+    box-shadow:0 0 30px rgba(139,92,246,.12);
+
+}
+
+.preview-icon{
+
+    width:64px;
+    height:64px;
+
+    border-radius:20px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    margin-bottom:18px;
+
+}
+
+.preview-card h3{
+
+    font-size:22px;
+    margin-bottom:10px;
+
+}
+
+.preview-card p{
+
+    color:var(--muted);
+    line-height:1.7;
+    font-size:14px;
+
+}
+
+/* SECTION */
+
+.section{
+
+    max-width:1300px;
+    margin:auto;
+
+    padding:30px 28px 90px;
+
+}
+
+.section-title{
+
+    font-size:52px;
+    letter-spacing:-2px;
+
+    margin-bottom:14px;
+
+}
+
+.section-sub{
+
+    color:var(--muted);
+    font-size:18px;
+
+    margin-bottom:40px;
+
+}
+
+/* FILTERS */
+
+.filters{
+
+    display:flex;
+    gap:14px;
+
+    margin-bottom:50px;
+
+}
+
+.filter{
+
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#d4d4e6;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    user-select:none;
+
+}
+
+.filter.active{
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+    color:white;
+
+}
+
+/* TOOL GRID */
+
+.tool-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:26px;
+
+}
+
+.tool-card{
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+    );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:30px;
+
+    padding:30px;
+
+    transition:.35s;
+
+}
+
+.tool-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(139,92,246,.5);
+
+    box-shadow:0 15px 40px rgba(139,92,246,.12);
+
+}
+
+.tool-icon{
+
+    width:74px;
+    height:74px;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:30px;
+
+    margin-bottom:24px;
+
+}
+
+.tool-card h3{
+
+    font-size:30px;
+    letter-spacing:-1px;
+
+    margin-bottom:14px;
+
+}
+
+.tool-card p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+.tool-button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.tool-button:hover{
+
+    background:linear-gradient(
+        135deg,
+        var(--purple),
+        var(--purple3)
+    );
+
+}
+
+/* FEATURES */
+
+.features{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:24px;
+
+    margin-top:26px;
+
+}
+
+.feature{
+
+    background:rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:26px;
+
+    padding:30px;
+
+}
+
+.feature h4{
+
+    font-size:22px;
+    margin-bottom:14px;
+
+}
+
+.feature p{
+
+    color:var(--muted);
+    line-height:1.8;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    padding:42px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    color:var(--muted);
+
+}
+
+/* HIDDEN CLASS */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.hero{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero-text h1{
+
+    font-size:58px;
+
+}
+
+}
+
+@media(max-width:700px){
+
+.nav-links{
+
+    display:none;
+
+}
+
+.hero{
+
+    padding-top:80px;
+
+}
+
+.hero-text h1{
+
+    font-size:42px;
+    letter-spacing:-2px;
+
+}
+
+.preview-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.section-title{
+
+    font-size:40px;
+
+}
+
+.filters{
+
+    flex-wrap:wrap;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+    <div class="blur blur3"></div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <div class="logo" id="homeBtn">
+
+            <div class="logo-box">T</div>
+
+            <h2>Toolsy</h2>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#" id="homeLink">Home</a>
+            <a href="about.html">About</a>
+            <a href="Policy_privacy.html">Policy & Privacy</a>
+            <a href="Terms&Conditions.html">Terms & Conditions</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-text">
+
+        <h1>
+
+            Your File Tools.
+            <span>Right In Your Browser.</span>
+
+        </h1>
+
+        <p>
+
+            Modern browser-based utilities with a premium experience.
+            Fast, private, clean, and beautifully designed.
+
+        </p>
+
+        <button class="hero-btn" id="exploreBtn">
+            Explore Tools
+        </button>
+
+    </div>
+
+    <div class="hero-preview">
+
+        <div class="preview-grid">
+
+            <div class="preview-card">
+
+                <div class="preview-icon">📄</div>
+
+                <h3>PDF → Images</h3>
+
+                <p>
+                    Convert PDF pages into high quality images
+                    directly in your browser.
+                </p>
+
+            </div>
+
+            <div class="preview-card">
+
+                <div class="preview-icon">🖼️</div>
+
+                <h3>Images → PDF</h3>
+
+                <p>
+                    Merge multiple images into beautiful PDFs
+                    without losing quality.
+                </p>
+
+            </div>
+
+            <div class="preview-card">
+
+                <div class="preview-icon">⚡</div>
+
+                <h3>Fast</h3>
+
+                <p>
+                    Everything works instantly with smooth
+                    browser-based processing.
+                </p>
+
+            </div>
+
+            <div class="preview-card">
+
+                <div class="preview-icon">🔒</div>
+
+                <h3>Private</h3>
+
+                <p>
+                    Your files stay on your device.
+                    Nothing gets uploaded.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TOOLS -->
+
+<section class="section" id="toolsSection">
+
+    <h2 class="section-title">
+        Our Tools
+    </h2>
+
+    <p class="section-sub">
+
+        A small collection of modern browser-based utilities.
+
+    </p>
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <div class="filter active" id="allFilter">
+            All
+        </div>
+
+        <div class="filter" id="pdfFilter">
+            PDF
+        </div>
+
+    </div>
+
+    <!-- TOOLS -->
+
+    <div class="tool-grid">
+
+        <!-- PDF TOOL -->
+
+        <div class="tool-card pdf-tool">
+
+            <div class="tool-icon">📄</div>
+
+            <h3>PDF → Images</h3>
+
+            <p>
+
+                Convert PDF pages into high quality PNG or JPG
+                images instantly.
+
+            </p>
+
+            <button class="tool-button" id="pdfImagesBtn">
+                Open Tool
+            </button>
+
+        </div>
+
+        <!-- PDF TOOL -->
+
+        <div class="tool-card pdf-tool">
+
+            <div class="tool-icon">🖼️</div>
+
+            <h3>Images → PDF</h3>
+
+            <p>
+
+                Turn your images into clean and beautiful PDFs
+                directly in your browser.
+
+            </p>
+
+            <button class="tool-button" id="imagesPdfBtn">
+                Open Tool
+            </button>
+
+        </div>
+
+        <!-- OTHER TOOL -->
+
+        <div class="tool-card other-tool">
+
+            <div class="tool-icon">✨</div>
+
+            <h3>Coming Soon</h3>
+
+            <p>
+                More utilities will be added later.
+
+            </p>
+
+            <button class="tool-button">
+                Soon
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="section">
+
+    <h2 class="section-title">
+        Why Toolsy?
+    </h2>
+
+    <p class="section-sub">
+
+        Built with simplicity, speed, and modern design in mind.
+
+    </p>
+
+    <div class="features">
+
+        <div class="feature">
+
+            <h4>Private</h4>
+
+            <p>
+                Your files stay on your device and are never uploaded.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <h4>Fast</h4>
+
+            <p>
+                Lightweight tools optimized for instant processing.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <h4>Modern UI</h4>
+
+            <p>
+                Clean glassmorphism design with smooth interactions.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <h4>Minimal</h4>
+
+            <p>
+                No clutter. Just beautiful tools that feel premium.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    Toolsy © 2026 — Modern Browser Utilities Made By Aryan Makwana
+
+</footer>
+
+<script>
+
+/* ELEMENTS */
+
+const homeBtn = document.getElementById("homeBtn");
+const homeLink = document.getElementById("homeLink");
+
+const exploreBtn = document.getElementById("exploreBtn");
+
+const toolsSection = document.getElementById("toolsSection");
+
+const pdfImagesBtn = document.getElementById("pdfImagesBtn");
+const imagesPdfBtn = document.getElementById("imagesPdfBtn");
+
+const allFilter = document.getElementById("allFilter");
+const pdfFilter = document.getElementById("pdfFilter");
+
+const pdfTools = document.querySelectorAll(".pdf-tool");
+const otherTools = document.querySelectorAll(".other-tool");
+
+/* HOME */
+
+homeBtn.addEventListener("click", () => {
+
+    window.location.href = "index.html";
+
+});
+
+homeLink.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    window.location.href = "index.html";
+
+});
+
+/* EXPLORE */
+
+exploreBtn.addEventListener("click", () => {
+
+    toolsSection.scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+});
+
+/* TOOL LINKS */
+
+pdfImagesBtn.addEventListener("click", () => {
+
+    window.location.href = "pdf_to_image.html";
+
+});
+
+imagesPdfBtn.addEventListener("click", () => {
+
+    window.location.href = "image_to_pdf.html";
+
+});
+
+/* PDF FILTER */
+
+pdfFilter.addEventListener("click", () => {
+
+    pdfFilter.classList.add("active");
+    allFilter.classList.remove("active");
+
+    pdfTools.forEach(tool => {
+
+        tool.classList.remove("hidden");
+
+    });
+
+    otherTools.forEach(tool => {
+
+        tool.classList.add("hidden");
+
+    });
+
+});
+
+/* ALL FILTER */
+
+allFilter.addEventListener("click", () => {
+
+    allFilter.classList.add("active");
+    pdfFilter.classList.remove("active");
+
+    pdfTools.forEach(tool => {
+
+        tool.classList.remove("hidden");
+
+    });
+
+    otherTools.forEach(tool => {
+
+        tool.classList.remove("hidden");
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

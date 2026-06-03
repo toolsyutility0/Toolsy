@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About — Toolsy</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+
+    --bg:#09090f;
+
+    --text:#ffffff;
+    --muted:#9f9fb4;
+
+    --purple:#8b5cf6;
+    --purple2:#7c3aed;
+    --purple3:#a855f7;
+
+    --border:rgba(255,255,255,0.08);
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+
+}
+
+/* BACKGROUND */
+
+.background{
+
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    overflow:hidden;
+
+}
+
+.blur{
+
+    position:absolute;
+    border-radius:50%;
+    filter:blur(130px);
+    opacity:.35;
+
+}
+
+.blur1{
+
+    width:450px;
+    height:450px;
+
+    background:#7c3aed;
+
+    top:-150px;
+    left:-120px;
+
+}
+
+.blur2{
+
+    width:500px;
+    height:500px;
+
+    background:#2563eb;
+
+    top:120px;
+    right:-180px;
+
+}
+
+.blur3{
+
+    width:500px;
+    height:500px;
+
+    background:#9333ea;
+
+    bottom:-220px;
+    left:30%;
+
+}
+
+/* NAVBAR */
+
+.navbar{
+
+    width:100%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    backdrop-filter:blur(18px);
+
+    background:rgba(9,9,15,0.75);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+}
+
+.nav-inner{
+
+    max-width:1300px;
+    margin:auto;
+
+    padding:22px 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    cursor:pointer;
+
+}
+
+.logo-box{
+
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #a855f7
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+    font-weight:800;
+
+    box-shadow:0 0 35px rgba(139,92,246,.35);
+
+}
+
+.logo h2{
+
+    font-size:26px;
+    font-weight:800;
+
+}
+
+.nav-links{
+
+    display:flex;
+    gap:34px;
+
+}
+
+.nav-links a{
+
+    color:#d4d4e6;
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-size:15px;
+
+}
+
+.nav-links a:hover{
+
+    color:white;
+
+}
+
+/* SECTION */
+
+.section{
+
+    max-width:1300px;
+    margin:auto;
+
+    padding:120px 28px;
+
+}
+
+/* HERO */
+
+.hero{
+
+    text-align:center;
+    margin-bottom:100px;
+
+}
+
+.hero h1{
+
+    font-size:78px;
+    line-height:1.05;
+
+    letter-spacing:-4px;
+
+    margin-bottom:28px;
+
+}
+
+.hero h1 span{
+
+    background:linear-gradient(
+        90deg,
+        white,
+        #8b5cf6
+    );
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+    max-width:850px;
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:20px;
+    line-height:1.9;
+
+}
+
+/* TITLES */
+
+.title{
+
+    font-size:58px;
+    letter-spacing:-3px;
+
+    margin-bottom:18px;
+
+}
+
+.subtitle{
+
+    color:var(--muted);
+
+    font-size:18px;
+    line-height:1.8;
+
+    margin-bottom:50px;
+
+}
+
+/* GRID */
+
+.grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+
+}
+
+/* CARD */
+
+.card{
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+    );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:30px;
+
+    padding:34px;
+
+    transition:.35s;
+
+    backdrop-filter:blur(20px);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(139,92,246,.5);
+
+    box-shadow:0 15px 40px rgba(139,92,246,.12);
+
+}
+
+.icon{
+
+    width:74px;
+    height:74px;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #a855f7
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+
+    margin-bottom:24px;
+
+}
+
+.card h3{
+
+    font-size:28px;
+    margin-bottom:14px;
+
+}
+
+.card p{
+
+    color:var(--muted);
+    line-height:1.8;
+
+    margin-bottom:28px;
+
+}
+
+/* BUTTON */
+
+.btn{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:white;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #a855f7
+    );
+
+}
+
+/* CONTACT */
+
+.contact-box{
+
+    max-width:850px;
+    margin:auto;
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,0.06),
+        rgba(255,255,255,0.03)
+    );
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:34px;
+
+    padding:40px;
+
+    backdrop-filter:blur(20px);
+
+}
+
+.contact-form{
+
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+    width:100%;
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
+    font-family:'Inter',sans-serif;
+
+}
+
+.contact-form textarea{
+
+    min-height:180px;
+    resize:vertical;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:rgba(139,92,246,.6);
+
+    box-shadow:0 0 25px rgba(139,92,246,.15);
+
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+    color:#9f9fb4;
+
+}
+
+/* TOAST */
+
+.toast{
+
+    position:fixed;
+
+    bottom:30px;
+    right:30px;
+
+    background:linear-gradient(
+        135deg,
+        #8b5cf6,
+        #a855f7
+    );
+
+    color:white;
+
+    padding:18px 26px;
+
+    border-radius:18px;
+
+    font-weight:600;
+
+    opacity:0;
+    pointer-events:none;
+
+    transform:translateY(20px);
+
+    transition:.4s;
+
+    box-shadow:0 10px 40px rgba(139,92,246,.3);
+
+    z-index:9999;
+
+}
+
+.toast.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* FOOTER */
+
+.footer{
+
+    padding:42px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    color:var(--muted);
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+.nav-links{
+
+    display:none;
+
+}
+
+.hero h1{
+
+    font-size:48px;
+    letter-spacing:-2px;
+
+}
+
+.hero p{
+
+    font-size:17px;
+
+}
+
+.title{
+
+    font-size:42px;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+    <div class="blur blur3"></div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="nav-inner">
+
+        <div class="logo" id="homeBtn">
+
+            <div class="logo-box">T</div>
+
+            <h2>Toolsy</h2>
+
+        </div>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+            <a href="#socials">Socials</a>
+            <a href="#contact">Contact</a>
+            <a href="Policy_privacy.html">Policy & Privacy</a>
+            <a href="Terms&Conditions.html">Terms & Conditions</a>
+            
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="section">
+
+    <div class="hero">
+
+        <h1>
+
+            About
+            <span>Toolsy</span>
+
+        </h1>
+
+        <p>
+
+            Toolsy is a modern collection of browser-based utilities
+            focused on simplicity, speed, privacy, and premium user
+            experience. Every tool is designed to feel futuristic,
+            smooth, lightweight, and beautifully crafted.
+
+        </p>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">⚡</div>
+
+            <h3>Fast</h3>
+
+            <p>
+
+                Lightweight tools optimized for instant
+                browser-based performance.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🔒</div>
+
+            <h3>Private</h3>
+
+            <p>
+
+                Your files stay on your device.
+                Nothing is uploaded anywhere.
+
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">✨</div>
+
+            <h3>Modern</h3>
+
+            <p>
+
+                Glassmorphism inspired UI with smooth
+                animations and futuristic styling.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SOCIALS -->
+
+<section class="section" id="socials">
+
+    <h2 class="title">
+        Socials
+    </h2>
+
+    <p class="subtitle">
+
+        Follow Toolsy for updates,
+        future tools, and releases.
+
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <div class="icon">📸</div>
+
+            <h3>Instagram</h3>
+
+            <p>
+
+                Follow Toolsy for previews,
+                updates, and design content.
+
+            </p>
+
+            <button class="btn"
+            onclick="window.open('https://instagram.com/')">
+
+                Open Instagram
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">𝕏</div>
+
+            <h3>Twitter / X</h3>
+
+            <p>
+
+                Stay updated with launches,
+                features, and future projects.
+
+            </p>
+
+            <button class="btn"
+            onclick="window.open('https://x.com/')">
+
+                Open X
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icon">💬</div>
+
+            <h3>Discord</h3>
+
+            <p>
+
+                Join the community and
+                discuss updates and ideas.
+
+            </p>
+
+            <button class="btn"
+            onclick="window.open('https://discord.com/')">
+
+                Join Discord
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+    <h2 class="title">
+        Contact
+    </h2>
+
+    <p class="subtitle">
+
+        Want to suggest a tool,
+        report a bug, or collaborate?
+
+    </p>
+
+    <div class="contact-box">
+
+        <form class="contact-form" id="contactForm">
+
+            <input 
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required>
+
+            <input 
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required>
+
+            <textarea
+            id="message"
+            placeholder="Write your message..."
+            required></textarea>
+
+            <button 
+            type="submit" 
+            class="btn"
+            id="sendBtn">
+
+                Send Message
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    Toolsy © 2026 — Modern Browser Utilities Made By Aryan Makwana
+
+</footer>
+
+<!-- TOAST -->
+
+<div class="toast" id="toast">
+
+    Message Sent Successfully ✨
+
+</div>
+
+<!-- EMAILJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+/* HOME BUTTON */
+
+const homeBtn = document.getElementById("homeBtn");
+
+homeBtn.addEventListener("click", () => {
+
+    window.location.href = "index.html";
+
+});
+
+/* EMAILJS INIT */
+
+emailjs.init({
+
+    publicKey:"D5Qvii7PsX1qHpWJL"
+
+});
+
+/* ELEMENTS */
+
+const form = document.getElementById("contactForm");
+
+const sendBtn = document.getElementById("sendBtn");
+
+const toast = document.getElementById("toast");
+
+/* FORM SUBMIT */
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    sendBtn.innerText = "Sending...";
+    sendBtn.disabled = true;
+
+    const templateParams = {
+
+        from_name:document.getElementById("name").value,
+
+        from_email:document.getElementById("email").value,
+
+        message:document.getElementById("message").value
+
+    };
+
+    try{
+
+        await emailjs.send(
+
+            "service_brk19oo",
+            "template_idigazy",
+            templateParams
+
+        );
+
+        toast.classList.add("show");
+
+        setTimeout(() => {
+
+            toast.classList.remove("show");
+
+        },3000);
+
+        form.reset();
+
+        sendBtn.innerText = "Send Message";
+        sendBtn.disabled = false;
+
+    }
+
+    catch(error){
+
+        console.log(error);
+
+        alert("Something went wrong.");
+
+        sendBtn.innerText = "Send Message";
+        sendBtn.disabled = false;
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+```
